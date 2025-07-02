@@ -14,8 +14,10 @@ import mongoose from "mongoose";
             required: true,
         },
         publishedDate:{
-            type: Date,
+            type: Number,
             required: true,
+            min: [1000, "Published year cannot be before 1000"],
+            max: [new Date().getFullYear(), "Published Year cannot be later than the current year"]
         }
     }
  )
